@@ -14,6 +14,8 @@
 		D4A2662721822D5B0013E601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A2662521822D5B0013E601 /* LaunchScreen.storyboard */; };
 		D4A266342182306A0013E601 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266332182306A0013E601 /* CoordinatorProtocol.swift */; };
 		D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26635218232E90013E601 /* MainCoordinator.swift */; };
+		D4A266392182387C0013E601 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266382182387C0013E601 /* BaseViewController.swift */; };
+		D4A2663C218239B90013E601 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D4A2662821822D5B0013E601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4A266332182306A0013E601 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		D4A26635218232E90013E601 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D4A266382182387C0013E601 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				D4A2661E21822D580013E601 /* ViewController.swift */,
+				D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 				D4A26637218235190013E601 /* Generics */,
 				D4A2663221822FDE0013E601 /* Models */,
 				D4A2663121822FD10013E601 /* Networking */,
+				D4A266382182387C0013E601 /* BaseViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -189,8 +195,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A266392182387C0013E601 /* BaseViewController.swift in Sources */,
 				D4A2661F21822D580013E601 /* ViewController.swift in Sources */,
 				D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */,
+				D4A2663C218239B90013E601 /* ViewControllerPresenter.swift in Sources */,
 				D4A2661D21822D580013E601 /* AppDelegate.swift in Sources */,
 				D4A266342182306A0013E601 /* CoordinatorProtocol.swift in Sources */,
 			);

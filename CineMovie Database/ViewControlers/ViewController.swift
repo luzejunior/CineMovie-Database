@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController, Storyboarded {
+class ViewController: BaseViewController, Storyboarded {
     
     var coordinator: MainCoordinator?
+    var presenter = ViewControllerPresenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        activityIndicator.startAnimating()
+    }
+    
+    func viewDidFinishedLoading() {
+        activityIndicator.stopAnimating()
     }
 }
 
