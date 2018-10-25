@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var navigationController: UINavigationController?
+    var mainCoordinator: MainCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Init main navigation controller and main window:
+        navigationController = UINavigationController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        // Main Coordinator Init:
+        mainCoordinator = MainCoordinator(navigationController!, window!)
+        mainCoordinator?.startCoordinator()
+        
+        // Set navigationController as root view of view and make view visible.
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

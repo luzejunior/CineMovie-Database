@@ -12,6 +12,8 @@
 		D4A2662221822D580013E601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A2662021822D580013E601 /* Main.storyboard */; };
 		D4A2662421822D5B0013E601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4A2662321822D5B0013E601 /* Assets.xcassets */; };
 		D4A2662721822D5B0013E601 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A2662521822D5B0013E601 /* LaunchScreen.storyboard */; };
+		D4A266342182306A0013E601 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266332182306A0013E601 /* CoordinatorProtocol.swift */; };
+		D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26635218232E90013E601 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D4A2662321822D5B0013E601 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4A2662621822D5B0013E601 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4A2662821822D5B0013E601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4A266332182306A0013E601 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		D4A26635218232E90013E601 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,64 @@
 		D4A2661B21822D580013E601 /* CineMovie Database */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2663021822FC80013E601 /* Core */,
+				D4A2662F21822FC20013E601 /* Coordinator */,
+				D4A2662E21822FB40013E601 /* ViewControlers */,
 				D4A2661C21822D580013E601 /* AppDelegate.swift */,
-				D4A2661E21822D580013E601 /* ViewController.swift */,
 				D4A2662021822D580013E601 /* Main.storyboard */,
 				D4A2662321822D5B0013E601 /* Assets.xcassets */,
 				D4A2662521822D5B0013E601 /* LaunchScreen.storyboard */,
 				D4A2662821822D5B0013E601 /* Info.plist */,
 			);
 			path = "CineMovie Database";
+			sourceTree = "<group>";
+		};
+		D4A2662E21822FB40013E601 /* ViewControlers */ = {
+			isa = PBXGroup;
+			children = (
+				D4A2661E21822D580013E601 /* ViewController.swift */,
+			);
+			path = ViewControlers;
+			sourceTree = "<group>";
+		};
+		D4A2662F21822FC20013E601 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D4A266332182306A0013E601 /* CoordinatorProtocol.swift */,
+				D4A26635218232E90013E601 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D4A2663021822FC80013E601 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D4A26637218235190013E601 /* Generics */,
+				D4A2663221822FDE0013E601 /* Models */,
+				D4A2663121822FD10013E601 /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D4A2663121822FD10013E601 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D4A2663221822FDE0013E601 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4A26637218235190013E601 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +190,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A2661F21822D580013E601 /* ViewController.swift in Sources */,
+				D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */,
 				D4A2661D21822D580013E601 /* AppDelegate.swift in Sources */,
+				D4A266342182306A0013E601 /* CoordinatorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
