@@ -16,6 +16,7 @@
 		D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26635218232E90013E601 /* MainCoordinator.swift */; };
 		D4A266392182387C0013E601 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266382182387C0013E601 /* BaseViewController.swift */; };
 		D4A2663C218239B90013E601 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */; };
+		D4A2663E21823AD70013E601 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2663D21823AD70013E601 /* GenericDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D4A26635218232E90013E601 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		D4A266382182387C0013E601 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
+		D4A2663D21823AD70013E601 /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		D4A26637218235190013E601 /* Generics */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2663D21823AD70013E601 /* GenericDataSource.swift */,
 			);
 			path = Generics;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				D4A2661F21822D580013E601 /* ViewController.swift in Sources */,
 				D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */,
 				D4A2663C218239B90013E601 /* ViewControllerPresenter.swift in Sources */,
+				D4A2663E21823AD70013E601 /* GenericDataSource.swift in Sources */,
 				D4A2661D21822D580013E601 /* AppDelegate.swift in Sources */,
 				D4A266342182306A0013E601 /* CoordinatorProtocol.swift in Sources */,
 			);
