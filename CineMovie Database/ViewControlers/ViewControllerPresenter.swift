@@ -10,4 +10,20 @@ import UIKit
 
 final class ViewControllerPresenter {
     
+    weak var view: ViewController?
+    
+    init(view: ViewController) {
+        self.view = view
+    }
+    
+    func fetchData() {
+        RequestUpcoming.PerformRequest(page: 1, completion: (printResults))
+    }
+    
+    func printResults(data: UpcomingResponse) {
+        for movie in data.results {
+            print("Movie name: " + movie.title)
+        }
+        view?.viewDidFinishedLoading()
+    }
 }

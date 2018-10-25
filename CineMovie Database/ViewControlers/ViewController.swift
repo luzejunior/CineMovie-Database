@@ -11,15 +11,19 @@ import UIKit
 class ViewController: BaseViewController, Storyboarded {
     
     var coordinator: MainCoordinator?
-    var presenter = ViewControllerPresenter()
+    var presenter: ViewControllerPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
+        presenter = ViewControllerPresenter(view: self)
+        presenter!.fetchData()
     }
     
     func viewDidFinishedLoading() {
-        activityIndicator.stopAnimating()
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+        }
     }
 }
 

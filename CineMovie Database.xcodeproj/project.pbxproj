@@ -17,6 +17,11 @@
 		D4A266392182387C0013E601 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266382182387C0013E601 /* BaseViewController.swift */; };
 		D4A2663C218239B90013E601 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */; };
 		D4A2663E21823AD70013E601 /* GenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2663D21823AD70013E601 /* GenericDataSource.swift */; };
+		D4A26643218251CC0013E601 /* UpcomingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26642218251CC0013E601 /* UpcomingResponse.swift */; };
+		D4A26645218252000013E601 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26644218252000013E601 /* MovieData.swift */; };
+		D4A26647218254750013E601 /* RequestUpcoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26646218254750013E601 /* RequestUpcoming.swift */; };
+		D4A26649218257240013E601 /* GenericNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26648218257240013E601 /* GenericNetwork.swift */; };
+		D4A2664C218259C90013E601 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2664B218259C90013E601 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		D4A266382182387C0013E601 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		D4A2663D21823AD70013E601 /* GenericDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDataSource.swift; sourceTree = "<group>"; };
+		D4A26642218251CC0013E601 /* UpcomingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingResponse.swift; sourceTree = "<group>"; };
+		D4A26644218252000013E601 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		D4A26646218254750013E601 /* RequestUpcoming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestUpcoming.swift; sourceTree = "<group>"; };
+		D4A26648218257240013E601 /* GenericNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNetwork.swift; sourceTree = "<group>"; };
+		D4A2664B218259C90013E601 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +107,10 @@
 		D4A2663021822FC80013E601 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D4A26637218235190013E601 /* Generics */,
-				D4A2663221822FDE0013E601 /* Models */,
+				D4A2663F21824F400013E601 /* TableViewCell */,
 				D4A2663121822FD10013E601 /* Networking */,
 				D4A266382182387C0013E601 /* BaseViewController.swift */,
+				D4A2663D21823AD70013E601 /* GenericDataSource.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -108,6 +118,10 @@
 		D4A2663121822FD10013E601 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2663221822FDE0013E601 /* Models */,
+				D4A26646218254750013E601 /* RequestUpcoming.swift */,
+				D4A26648218257240013E601 /* GenericNetwork.swift */,
+				D4A2664B218259C90013E601 /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -115,16 +129,17 @@
 		D4A2663221822FDE0013E601 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D4A26642218251CC0013E601 /* UpcomingResponse.swift */,
+				D4A26644218252000013E601 /* MovieData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D4A26637218235190013E601 /* Generics */ = {
+		D4A2663F21824F400013E601 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				D4A2663D21823AD70013E601 /* GenericDataSource.swift */,
 			);
-			path = Generics;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,10 +216,15 @@
 				D4A266392182387C0013E601 /* BaseViewController.swift in Sources */,
 				D4A2661F21822D580013E601 /* ViewController.swift in Sources */,
 				D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */,
+				D4A26645218252000013E601 /* MovieData.swift in Sources */,
 				D4A2663C218239B90013E601 /* ViewControllerPresenter.swift in Sources */,
+				D4A26647218254750013E601 /* RequestUpcoming.swift in Sources */,
 				D4A2663E21823AD70013E601 /* GenericDataSource.swift in Sources */,
+				D4A26649218257240013E601 /* GenericNetwork.swift in Sources */,
 				D4A2661D21822D580013E601 /* AppDelegate.swift in Sources */,
+				D4A2664C218259C90013E601 /* NetworkError.swift in Sources */,
 				D4A266342182306A0013E601 /* CoordinatorProtocol.swift in Sources */,
+				D4A26643218251CC0013E601 /* UpcomingResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
