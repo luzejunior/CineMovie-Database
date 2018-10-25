@@ -11,6 +11,7 @@ import UIKit
 final class ViewControllerPresenter {
     
     weak var view: ViewController?
+    var dataSource = GenericDataSource()
     
     init(view: ViewController) {
         self.view = view

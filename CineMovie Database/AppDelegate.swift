@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Init main navigation controller and main window:
         navigationController = UINavigationController()
+        navigationController?.navigationBar.prefersLargeTitles = true
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // Main Coordinator Init:
