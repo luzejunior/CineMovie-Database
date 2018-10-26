@@ -26,6 +26,9 @@
 		D4A2664E21827D130013E601 /* MoviesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A2664D21827D130013E601 /* MoviesCell.xib */; };
 		D4A26650218284130013E601 /* MoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2664F218284130013E601 /* MoviesCell.swift */; };
 		D4A26654218290B60013E601 /* GenreSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A26653218290B60013E601 /* GenreSwitch.swift */; };
+		D4A266592182ABAC0013E601 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266582182ABAC0013E601 /* ModalViewController.swift */; };
+		D4A266602182B0320013E601 /* MovieModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2665F2182B0320013E601 /* MovieModal.swift */; };
+		D4A266622182B3E20013E601 /* MovieModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266612182B3E20013E601 /* MovieModalPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		D4A2664D21827D130013E601 /* MoviesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesCell.xib; sourceTree = "<group>"; };
 		D4A2664F218284130013E601 /* MoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCell.swift; sourceTree = "<group>"; };
 		D4A26653218290B60013E601 /* GenreSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreSwitch.swift; sourceTree = "<group>"; };
+		D4A266582182ABAC0013E601 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		D4A2665F2182B0320013E601 /* MovieModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModal.swift; sourceTree = "<group>"; };
+		D4A266612182B3E20013E601 /* MovieModalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModalPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,8 @@
 			children = (
 				D4A2661E21822D580013E601 /* ViewController.swift */,
 				D4A2663B218239B90013E601 /* ViewControllerPresenter.swift */,
+				D4A2665F2182B0320013E601 /* MovieModal.swift */,
+				D4A266612182B3E20013E601 /* MovieModalPresenter.swift */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 		D4A2663021822FC80013E601 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D4A2665A2182AF820013E601 /* Modal */,
 				D4A2663F21824F400013E601 /* TableViewCell */,
 				D4A2663121822FD10013E601 /* Networking */,
 				D4A266382182387C0013E601 /* BaseViewController.swift */,
@@ -173,6 +182,14 @@
 				D4A2664F218284130013E601 /* MoviesCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		D4A2665A2182AF820013E601 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				D4A266582182ABAC0013E601 /* ModalViewController.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,12 +306,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A266392182387C0013E601 /* BaseViewController.swift in Sources */,
+				D4A266592182ABAC0013E601 /* ModalViewController.swift in Sources */,
+				D4A266622182B3E20013E601 /* MovieModalPresenter.swift in Sources */,
 				D4A2661F21822D580013E601 /* ViewController.swift in Sources */,
 				D4A26636218232E90013E601 /* MainCoordinator.swift in Sources */,
 				D4A26650218284130013E601 /* MoviesCell.swift in Sources */,
 				D4A26645218252000013E601 /* MovieData.swift in Sources */,
 				D4A26654218290B60013E601 /* GenreSwitch.swift in Sources */,
 				D4A2663C218239B90013E601 /* ViewControllerPresenter.swift in Sources */,
+				D4A266602182B0320013E601 /* MovieModal.swift in Sources */,
 				D4A26647218254750013E601 /* RequestUpcoming.swift in Sources */,
 				D4A2663E21823AD70013E601 /* GenericDataSource.swift in Sources */,
 				D4A26649218257240013E601 /* GenericNetwork.swift in Sources */,

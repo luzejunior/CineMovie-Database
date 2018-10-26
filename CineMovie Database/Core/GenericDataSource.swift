@@ -26,6 +26,7 @@ final class GenericDataSource: NSObject, UITableViewDataSource {
 
 protocol UITableViewModels {
     var representable: UITableViewRepresentable { get }
+    func selectedRow() -> Decodable
 }
 
 protocol UITableViewRepresentable {

@@ -38,6 +38,7 @@ class MoviesCell: UITableViewCell, UITableViewContent {
 }
 
 class MoviesCellPresenter: UITableViewModels {
+    
     var representable: UITableViewRepresentable {
         return UITableViewContentAssembler<MoviesCell>(presenter: self)
     }
@@ -66,5 +67,9 @@ class MoviesCellPresenter: UITableViewModels {
     
     init(movie: MovieData) {
         self.movie = movie
+    }
+    
+    func selectedRow() -> Decodable {
+        return movie!
     }
 }

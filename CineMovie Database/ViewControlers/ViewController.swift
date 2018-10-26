@@ -84,5 +84,11 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
             presenter?.loadMoreContent()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let movie = presenter?.dataSource.items[indexPath.row].selectedRow() as? MovieData
+        coordinator?.didTouchTableViewRow(movie: movie!)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
