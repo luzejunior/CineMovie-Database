@@ -13,7 +13,7 @@ class MainCoordinator: Coordinatable {
     var navigationController: UINavigationController?
     var window: UIWindow?
     
-    // Coordinator's view controllers
+    // View controllers handled by this coordinator
     var mainViewController: ViewController?
     var defaultModal: ModalViewController?
     var movieModal: MovieModal?
@@ -31,6 +31,7 @@ class MainCoordinator: Coordinatable {
         self.pushViewController(mainViewController!)
     }
     
+    // Instantiate movie overview view
     func didTouchTableViewRow(movie: MovieData) {
         movieModal = MovieModal.Instantiate()
         movieModal?.coordinator = self
@@ -39,10 +40,12 @@ class MainCoordinator: Coordinatable {
         presentModal(movieModal, animated: true)
     }
     
+    // On touch close button inside modal
     func didTouchCloseModal() {
         defaultModal?.didTouchModal()
     }
     
+    // Present modal view
     private func presentModal(_ viewController: UIViewController?, animated: Bool = false) {
         guard let viewController = viewController else {
             return

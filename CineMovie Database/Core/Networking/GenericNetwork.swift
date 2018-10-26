@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Get json data from server
 func getDataFromServer<T: Decodable>(path: String, completion: @escaping (T) -> (), error: @escaping (NetworkError) -> Void) {
     guard let url = URL(string: path) else { return }
     URLSession.shared.dataTask(with: url) { (data, response, err) in

@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating, UITableViewDelegate {
     
-    // IBOutlets:
+    // IBOutlets
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -39,6 +39,7 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
         tableView.dataSource = presenter?.dataSource
     }
     
+    // When finished fetching
     func viewDidFinishedLoading() {
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
@@ -73,11 +74,11 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
         tableView.register(MoviesCell.self)
     }
     
+    // Method to listen when hit tableview bottom
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         
-        // Change 10.0 to adjust the distance from bottom
         if maximumOffset - currentOffset <= 10.0 && !loadingMoreContent {
             print("Time to load more content")
             loadingMoreContent = true
@@ -85,6 +86,7 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
         }
     }
     
+    // When select tableview row, call coordinator modal
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let movie = presenter?.dataSource.items[indexPath.row].selectedRow() as? MovieData
         coordinator?.didTouchTableViewRow(movie: movie!)

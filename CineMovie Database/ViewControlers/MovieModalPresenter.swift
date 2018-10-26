@@ -15,7 +15,6 @@ class MovieModalPresenter {
     var movieTitle: String {
         return movie?.title ?? ""
     }
-    
     var movieGenre: String {
         var string = ""
         for id in movie?.genre_ids ?? [0] {
@@ -23,15 +22,12 @@ class MovieModalPresenter {
         }
         return string
     }
-    
     var movieReleaseDate: String {
         return movie?.release_date ?? ""
     }
-    
     var moviePosterURL: URL {
         return URL(string: RequestUpcoming.imageDownloadURL + (movie?.poster_path ?? ""))!
     }
-    
     var movieOverview: String {
         return movie?.overview ?? ""
     }

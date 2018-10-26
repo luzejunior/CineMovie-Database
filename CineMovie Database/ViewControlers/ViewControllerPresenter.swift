@@ -20,10 +20,12 @@ final class ViewControllerPresenter {
         self.view = view
     }
     
+    // Fetch data
     func fetchData() {
-        RequestUpcoming.PerformRequest(page: currentPage, completion: (createTableElements))
+        RequestUpcoming.getUpcomingMovies(page: currentPage, completion: (createTableElements))
     }
     
+    // Create all tableview rows
     func createTableElements(data: UpcomingResponse) {
         if !(view?.loadingMoreContent ?? false) {
             dataSource.items.removeAll()
@@ -36,6 +38,7 @@ final class ViewControllerPresenter {
         view?.viewDidFinishedLoading()
     }
     
+    // Load more content if needed
     func loadMoreContent() {
         currentPage += 1
         if currentPage < maxPages {

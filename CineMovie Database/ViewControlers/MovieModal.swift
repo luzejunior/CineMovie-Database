@@ -10,6 +10,7 @@ import UIKit
 
 class MovieModal: UIViewController, Storyboarded {
     
+    // IBOutlets
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var movieGenres: UILabel!
@@ -34,6 +35,7 @@ class MovieModal: UIViewController, Storyboarded {
         super.viewDidLoad()
     }
     
+    // View IBOutlets configuration
     func configureView() {
         moviePoster.kf.indicatorType = .activity
         moviePoster.kf.setImage(with: presenter?.moviePosterURL)
@@ -43,6 +45,7 @@ class MovieModal: UIViewController, Storyboarded {
         movieOverview.text = presenter?.movieOverview
     }
     
+    // On close button, call coordinator
     @IBAction func didTouchCloseButton(_ sender: Any) {
         coordinator?.didTouchCloseModal()
     }

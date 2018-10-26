@@ -8,6 +8,7 @@
 
 import UIKit
 
+// UITableview data source class
 final class GenericDataSource: NSObject, UITableViewDataSource {
     
     var items: [UITableViewModels] = []
@@ -39,6 +40,7 @@ protocol UITableViewContent {
     func load(presenter: Presenter)
 }
 
+// Abstract class that handles tableviewCell configuration and properties
 final class UITableViewContentAssembler<T: UITableViewContent>: UITableViewRepresentable where T: UIView {
     let presenter: T.Presenter
     
@@ -55,6 +57,7 @@ final class UITableViewContentAssembler<T: UITableViewContent>: UITableViewRepre
     }
 }
 
+// Extension to register tableViewCells for tableview instances.
 extension UITableView {
     func register(_ cellClass: AnyClass) {
         register(UINib(nibName: String(describing: cellClass.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: cellClass.self))

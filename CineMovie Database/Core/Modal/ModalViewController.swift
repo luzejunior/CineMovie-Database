@@ -10,16 +10,24 @@ import UIKit
 
 class ModalViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var containerView: UIView!
+    // IBOutlets
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.layer.cornerRadius = 30
+            containerView.layer.shadowOffset = CGSize(width: 6, height: 5)
+            containerView.layer.shadowOpacity = 0.29
+            containerView.layer.shadowRadius = 7
+        }
+    }
+    
     weak var viewController: UIViewController?
-    @IBOutlet weak var closeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureModal()
-        setupLayout()
     }
     
+    // Configure viewController inside containerView
     private func configureModal() {
         guard let viewController = self.viewController else {
             return
@@ -35,13 +43,7 @@ class ModalViewController: UIViewController, Storyboarded {
         ])
     }
     
-    private func setupLayout() {
-        containerView.layer.cornerRadius = 30
-        containerView.layer.shadowOffset = CGSize(width: 6, height: 5)
-        containerView.layer.shadowOpacity = 0.29
-        containerView.layer.shadowRadius = 7
-    }
-    
+    // Close modal
     func didTouchModal() {
         viewController?.dismiss(animated: false, completion: nil)
         viewController = nil

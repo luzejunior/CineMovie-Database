@@ -9,25 +9,29 @@
 import UIKit
 import Kingfisher
 
+// Movies cell controller
 class MoviesCell: UITableViewCell, UITableViewContent {
     
+    // IBOutlets
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieGenreLabel: UILabel!
     @IBOutlet weak var movieReleaseDateLabel: UILabel!
     
+    // Presenter
     weak var presenter: MoviesCellPresenter?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
+    // Load cell content
     func load(presenter: MoviesCellPresenter) {
         self.presenter = presenter
         configureView()
     }
     
+    // Configure cell content
     func configureView() {
         moviePoster.kf.indicatorType = .activity
         moviePoster.kf.setImage(with: presenter?.moviePosterURL)
@@ -37,18 +41,16 @@ class MoviesCell: UITableViewCell, UITableViewContent {
     }
 }
 
+// Movie cell presenter
 class MoviesCellPresenter: UITableViewModels {
-    
     var representable: UITableViewRepresentable {
         return UITableViewContentAssembler<MoviesCell>(presenter: self)
     }
     
     var movie: MovieData?
-    
     var movieTitle: String {
         return movie?.title ?? ""
     }
-    
     var movieGenre: String {
         var string = ""
         for id in movie?.genre_ids ?? [0] {
@@ -56,11 +58,9 @@ class MoviesCellPresenter: UITableViewModels {
         }
         return string
     }
-    
     var movieReleaseDate: String {
         return movie?.release_date ?? ""
-    }
-    
+    }    
     var moviePosterURL: URL {
         return URL(string: RequestUpcoming.imageDownloadURL + (movie?.poster_path ?? ""))!
     }

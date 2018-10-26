@@ -8,8 +8,10 @@
 
 import UIKit
 
+// Abstract base view controller class to include activity indicator inside view controllers
 class BaseViewController: UIViewController {
 
+    // Activity indicator instantiation
     let activityIndicator: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
         aiv.translatesAutoresizingMaskIntoConstraints = false
@@ -21,6 +23,7 @@ class BaseViewController: UIViewController {
         configureActivityIndicator()
     }
     
+    // Activity indicator configuration, centering it at middle of screen.
     func configureActivityIndicator() {
         view.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
