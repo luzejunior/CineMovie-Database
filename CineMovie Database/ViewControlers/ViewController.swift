@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating, UITableViewDelegate {
+class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating, UITableViewDelegate, UISearchBarDelegate {
     
     // IBOutlets
     @IBOutlet weak var tableView: UITableView! {
@@ -51,23 +51,45 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
     // --------------- Search Bar ---------------
     
     var isSearching = false
+    var canceledEditing = false
+    var searchBarText = ""
     
     // Create search Bar
     func createSearchBar() {
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
+        search.searchBar.delegate = self
+        search.dimsBackgroundDuringPresentation = false
         self.navigationItem.searchController = search
         self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     // Method to change results
     func updateSearchResults(for searchController: UISearchController) {
-        
+        print("startedEditing")
+        if !canceledEditing {
+            searchBarText = searchController.searchBar.text!
+        }
+        presenter?.searchBarResults(searchBarText)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        isSearching = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        canceledEditing = false
+        isSearching = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        canceledEditing = true
+        isSearching = false
     }
     
     // --------------- Table View ---------------
     
-    var loadingMoreContent = false
+    var loadingMoreContent = true
     
     // Register table view cells
     func registerCells() {
@@ -79,7 +101,7 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
         let currentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         
-        if maximumOffset - currentOffset <= 10.0 && !loadingMoreContent {
+        if maximumOffset - currentOffset <= 10.0 && !loadingMoreContent && !isSearching {
             print("Time to load more content")
             loadingMoreContent = true
             presenter?.loadMoreContent()
@@ -88,7 +110,7 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
     
     // When select tableview row, call coordinator modal
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let movie = presenter?.dataSource.items[indexPath.row].selectedRow() as? MovieData
+        let movie = presenter?.currentMovieList[indexPath.row]
         coordinator?.didTouchTableViewRow(movie: movie!)
         tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -13,6 +13,9 @@ final class ViewControllerPresenter {
     weak var view: ViewController?
     var dataSource = GenericDataSource()
     
+    var totalMoviesList = [MovieData]()
+    var currentMovieList = [MovieData]()
+    
     var currentPage: Int = 1
     var maxPages: Int = 0
     
@@ -22,16 +25,20 @@ final class ViewControllerPresenter {
     
     // Fetch data
     func fetchData() {
-        RequestUpcoming.getUpcomingMovies(page: currentPage, completion: (createTableElements))
+        RequestUpcoming.getUpcomingMovies(page: currentPage, completion: (createTableElements), error: (handleError))
     }
     
     // Create all tableview rows
     func createTableElements(data: UpcomingResponse) {
-        if !(view?.loadingMoreContent ?? false) {
-            dataSource.items.removeAll()
-        }
         maxPages = data.total_pages
-        for movie in data.results {
+        totalMoviesList.append(contentsOf: data.results)
+        currentMovieList.append(contentsOf: data.results)
+        createTableViewData()
+    }
+    
+    func createTableViewData() {
+        dataSource.items.removeAll()
+        for movie in currentMovieList {
             let tableViewContent = MoviesCellPresenter(movie: movie)
             dataSource.items.append(tableViewContent)
         }
@@ -44,5 +51,19 @@ final class ViewControllerPresenter {
         if currentPage < maxPages {
             fetchData()
         }
+    }
+    
+    func searchBarResults(_ searchBarText: String) {
+        guard !searchBarText.isEmpty else {
+            currentMovieList = totalMoviesList
+            createTableViewData()
+            return
+        }
+        currentMovieList = totalMoviesList.filter({($0.title?.contains(searchBarText))!})
+        createTableViewData()
+    }
+    
+    func handleError(error: NetworkError) {
+        
     }
 }

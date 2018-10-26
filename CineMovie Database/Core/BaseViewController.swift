@@ -18,6 +18,10 @@ class BaseViewController: UIViewController {
         return aiv
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.definesPresentationContext = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureActivityIndicator()
