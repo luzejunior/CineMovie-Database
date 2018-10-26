@@ -53,3 +53,9 @@ final class UITableViewContentAssembler<T: UITableViewContent>: UITableViewRepre
         return String(describing: T.self)
     }
 }
+
+extension UITableView {
+    func register(_ cellClass: AnyClass) {
+        register(UINib(nibName: String(describing: cellClass.self), bundle: Bundle.main), forCellReuseIdentifier: String(describing: cellClass.self))
+    }
+}

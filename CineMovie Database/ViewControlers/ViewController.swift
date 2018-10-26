@@ -14,6 +14,8 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
+            tableView.rowHeight = UITableView.automaticDimension
+            registerCells()
         }
     }
     
@@ -40,6 +42,8 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
     func viewDidFinishedLoading() {
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
+            self.tableView.reloadData()
+            self.loadingMoreContent = false
         }
     }
     
@@ -58,6 +62,27 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
     // Method to change results
     func updateSearchResults(for searchController: UISearchController) {
         
+    }
+    
+    // --------------- Table View ---------------
+    
+    var loadingMoreContent = false
+    
+    // Register table view cells
+    func registerCells() {
+        tableView.register(MoviesCell.self)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        // Change 10.0 to adjust the distance from bottom
+        if maximumOffset - currentOffset <= 10.0 && !loadingMoreContent {
+            print("Time to load more content")
+            loadingMoreContent = true
+            presenter?.loadMoreContent()
+        }
     }
 }
 
