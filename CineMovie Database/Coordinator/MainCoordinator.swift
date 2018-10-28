@@ -37,7 +37,7 @@ class MainCoordinator: Coordinatable {
         movieModal?.coordinator = self
         let movieModalPresenter = MovieModalPresenter(movie: movie)
         movieModal?.presenter = movieModalPresenter
-        presentModal(movieModal, animated: true)
+        presentModal(movieModal)
     }
     
     // On touch close button inside modal

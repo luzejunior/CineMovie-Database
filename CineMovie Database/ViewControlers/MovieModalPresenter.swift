@@ -28,6 +28,9 @@ class MovieModalPresenter {
     var moviePosterURL: URL {
         return URL(string: RequestUpcoming.imageDownloadURL + (movie?.poster_path ?? ""))!
     }
+    var movieHeaderURL: URL {
+        return URL(string: RequestUpcoming.headerDownloadURL + (movie?.backdrop_path ?? ""))!
+    }
     var movieOverview: String {
         return movie?.overview ?? ""
     }
