@@ -27,7 +27,6 @@ final class GenericDataSource: NSObject, UITableViewDataSource {
 
 protocol UITableViewModels {
     var representable: UITableViewRepresentable { get }
-    func selectedRow() -> Decodable
 }
 
 protocol UITableViewRepresentable {
@@ -40,7 +39,7 @@ protocol UITableViewContent {
     func load(presenter: Presenter)
 }
 
-// Abstract class that handles tableviewCell configuration and properties
+// Abstract class which handles tableviewCell configuration and properties
 final class UITableViewContentAssembler<T: UITableViewContent>: UITableViewRepresentable where T: UIView {
     let presenter: T.Presenter
     

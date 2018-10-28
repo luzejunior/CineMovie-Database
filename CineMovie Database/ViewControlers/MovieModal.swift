@@ -36,6 +36,7 @@ class MovieModal: UIViewController, Storyboarded {
         super.viewDidLoad()
     }
     
+    // Check rotation to change text color
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         if UIDevice.current.orientation.isLandscape {

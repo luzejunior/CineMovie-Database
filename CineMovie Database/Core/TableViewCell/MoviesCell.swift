@@ -68,8 +68,4 @@ class MoviesCellPresenter: UITableViewModels {
     init(movie: MovieData) {
         self.movie = movie
     }
-    
-    func selectedRow() -> Decodable {
-        return movie!
-    }
 }

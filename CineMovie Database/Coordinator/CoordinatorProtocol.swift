@@ -24,6 +24,7 @@ protocol Storyboarded {
     static func Instantiate() -> Self
 }
 
+// Method to instantiate UIVIewControllers
 extension Storyboarded where Self: UIViewController {
     static func Instantiate() -> Self {
         return UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: self)) as! Self

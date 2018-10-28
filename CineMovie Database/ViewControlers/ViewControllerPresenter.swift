@@ -53,6 +53,7 @@ final class ViewControllerPresenter {
         }
     }
     
+    // Filter movies with search bar text
     func searchBarResults(_ searchBarText: String) {
         guard !searchBarText.isEmpty else {
             currentMovieList = totalMoviesList
@@ -63,7 +64,8 @@ final class ViewControllerPresenter {
         createTableViewData()
     }
     
+    // Handle connection error
     func handleError(error: NetworkError) {
-        
+        view?.showAlert("An error occurred! Please try again later! Error: \(error)")
     }
 }

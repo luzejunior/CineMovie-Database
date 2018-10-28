@@ -33,7 +33,9 @@ class ModalViewController: UIViewController, Storyboarded {
         configureModal()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    // Open modal when view appear.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         openModal()
     }
     
@@ -53,8 +55,9 @@ class ModalViewController: UIViewController, Storyboarded {
         ])
     }
     
+    // Open modal with animation
     private func openModal() {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.containerView.alpha = 1.0
         }) { _ in
             UIView.animate(withDuration: 0.5) {

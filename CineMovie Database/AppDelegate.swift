@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mainCoordinator = MainCoordinator(navigationController!, window!)
         mainCoordinator?.startCoordinator()
         
-        // Set navigationController as root view of view and make view visible.
+        // Set navigationController as root view and make it visible.
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

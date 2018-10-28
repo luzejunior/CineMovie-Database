@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CineMovie Database/Core/Modal/ModalViewController.swift"
-            timestampString = "562452119.186563"
+            timestampString = "562455138.002682"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "didTouchModal()"
             landmarkType = "7">
          </BreakpointContent>

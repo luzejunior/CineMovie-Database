@@ -48,6 +48,13 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
         }
     }
     
+    // Show alert
+    func showAlert(_ message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // --------------- Search Bar ---------------
     
     var isSearching = false
@@ -66,22 +73,24 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
     
     // Method to change results
     func updateSearchResults(for searchController: UISearchController) {
-        print("startedEditing")
         if !canceledEditing {
             searchBarText = searchController.searchBar.text!
         }
         presenter?.searchBarResults(searchBarText)
     }
     
+    // When begin edit search bar, set flag to true
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         isSearching = true
     }
     
+    // When finish editing, set flags to false
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         canceledEditing = false
         isSearching = false
     }
     
+    // When cancel button clicked, reset every flag
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         canceledEditing = true
         isSearching = false
@@ -102,7 +111,6 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         
         if maximumOffset - currentOffset <= 10.0 && !loadingMoreContent && !isSearching {
-            print("Time to load more content")
             loadingMoreContent = true
             presenter?.loadMoreContent()
         }

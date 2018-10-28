@@ -18,6 +18,7 @@ class BaseViewController: UIViewController {
         return aiv
     }()
     
+    // defines presentation context to this view controller.
     override func viewWillAppear(_ animated: Bool) {
         self.definesPresentationContext = true
     }
