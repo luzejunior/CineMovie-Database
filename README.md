@@ -1,9 +1,13 @@
 # CineMovie-Database
 
 Hey, hello! This is my Code Challenge implementation for iOS Dev job at ArcTouch!
+
 Sorry for my bad UI design! HAHA I've got to say that as an UX designer, I'm a very good developer! HAHA
+
 I'm using Swift Coordinators and View Presenter design patterns, so, the main app presentation controller is "MainCoordinator.swift".
+
 My implementation is pretty simple: you have the startCoordinator method which creates first view controller and tableView to display all movies. When you touch any tableview row, the view controller calls a coordinator method to open the movie view controller modal. And that's it! haha
+
 If you have any doubt, just send me a message, and I'll be glad to answer you!
 
 ## Requirements:
