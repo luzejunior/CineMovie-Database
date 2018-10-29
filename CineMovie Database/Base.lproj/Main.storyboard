@@ -208,6 +208,7 @@
                         <viewLayoutGuide key="safeArea" id="OV4-5I-Umi"/>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="kTY-Ak-Yre" id="njO-RJ-Ci5"/>
                         <outlet property="headerImage" destination="Tci-Kk-nDH" id="lGn-RU-qt2"/>
                         <outlet property="mainView" destination="3GX-Ox-siD" id="1T4-zj-0qK"/>
                         <outlet property="movieGenres" destination="eMI-lJ-iSy" id="14v-ab-Uhp"/>

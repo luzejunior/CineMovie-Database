@@ -24,6 +24,7 @@ class MovieModal: UIViewController, Storyboarded {
             }
         }
     }
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet var mainView: UIView! {
         didSet {
             mainView.layer.cornerRadius = 30
@@ -46,7 +47,7 @@ class MovieModal: UIViewController, Storyboarded {
     // Check rotation to change text color
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        if UIDevice.current.orientation.isLandscape {
+        if UIDevice.current.orientation.isLandscape && headerImage.alpha != 0.0 {
             movieOverview.textColor = .white
             movieOverview.shadowColor = .black
         } else {
@@ -57,8 +58,19 @@ class MovieModal: UIViewController, Storyboarded {
     
     // View IBOutlets configuration
     func configureView() {
-        headerImage.kf.indicatorType = .activity
-        headerImage.kf.setImage(with: presenter?.movieHeaderURL)
+        headerImage.kf.indicatorType = .activity 
+        headerImage.kf.setImage(with: presenter?.movieHeaderURL) { (image, error, _, _) in
+            if image == nil {
+                self.headerImage.alpha = 0.0
+                self.movieName.textColor = .black
+                self.movieName.shadowColor = .white
+                self.movieGenres.textColor = .black
+                self.movieGenres.shadowColor = .white
+                self.movieReleaseDate.textColor = .black
+                self.movieReleaseDate.shadowColor = .white
+                self.closeButton.titleLabel?.textColor = .black
+            }
+        }
         moviePoster.kf.indicatorType = .activity
         moviePoster.kf.setImage(with: presenter?.moviePosterURL) { (image, error, _, _) in
             if image == nil {
