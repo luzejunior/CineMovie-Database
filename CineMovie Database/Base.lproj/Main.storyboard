@@ -22,17 +22,28 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey! Looks like you don't have internet connection! Please set up a network connection!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voa-Qe-ett">
+                                <rect key="frame" x="20" y="413.5" width="374" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Voa-Qe-ett" secondAttribute="trailing" constant="20" id="J6s-CZ-85l"/>
                             <constraint firstItem="syb-CI-vAY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="OI4-nE-zhm"/>
+                            <constraint firstItem="Voa-Qe-ett" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="OLw-Jq-hNk"/>
                             <constraint firstItem="syb-CI-vAY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pyo-0f-fzr"/>
+                            <constraint firstItem="Voa-Qe-ett" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Q82-xZ-zOC"/>
                             <constraint firstItem="syb-CI-vAY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a5N-uV-e8V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="syb-CI-vAY" secondAttribute="trailing" id="hrU-ow-sZY"/>
+                            <constraint firstItem="Voa-Qe-ett" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uf7-ZJ-ss1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="internetConnectionLabel" destination="Voa-Qe-ett" id="Eva-Hw-XdB"/>
                         <outlet property="tableView" destination="syb-CI-vAY" id="fM8-dg-xDQ"/>
                     </connections>
                 </viewController>

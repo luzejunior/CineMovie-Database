@@ -16,7 +16,14 @@ class MovieModal: UIViewController, Storyboarded {
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var movieGenres: UILabel!
     @IBOutlet weak var movieReleaseDate: UILabel!
-    @IBOutlet weak var movieOverview: UILabel!
+    @IBOutlet weak var movieOverview: UILabel! {
+        didSet {
+            if UIDevice.current.orientation.isLandscape {
+                movieOverview.textColor = .white
+                movieOverview.shadowColor = .black
+            }
+        }
+    }
     @IBOutlet var mainView: UIView! {
         didSet {
             mainView.layer.cornerRadius = 30

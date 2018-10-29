@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD24AC3547B6E63611DF3CF8 /* Pods_CineMovie_Database.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232F95DC0071B9136985DA0A /* Pods_CineMovie_Database.framework */; };
+		D44D63BB21874F2B00F5626E /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D63BA21874F2B00F5626E /* Reachability.swift */; };
+		D44D63BD2187515700F5626E /* AnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44D63BC2187515700F5626E /* AnimationExtension.swift */; };
 		D4A2661D21822D580013E601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2661C21822D580013E601 /* AppDelegate.swift */; };
 		D4A2661F21822D580013E601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2661E21822D580013E601 /* ViewController.swift */; };
 		D4A2662221822D580013E601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4A2662021822D580013E601 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 		232F95DC0071B9136985DA0A /* Pods_CineMovie_Database.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CineMovie_Database.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		474807D538D7EB8CC12EE100 /* Pods-CineMovie Database.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CineMovie Database.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CineMovie Database/Pods-CineMovie Database.debug.xcconfig"; sourceTree = "<group>"; };
 		CF93909681AC4632B7DAC5F5 /* Pods-CineMovie Database.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CineMovie Database.release.xcconfig"; path = "Pods/Target Support Files/Pods-CineMovie Database/Pods-CineMovie Database.release.xcconfig"; sourceTree = "<group>"; };
+		D44D63BA21874F2B00F5626E /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		D44D63BC2187515700F5626E /* AnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExtension.swift; sourceTree = "<group>"; };
 		D4A2661921822D580013E601 /* CineMovie Database.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CineMovie Database.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A2661C21822D580013E601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4A2661E21822D580013E601 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				D4A266382182387C0013E601 /* BaseViewController.swift */,
 				D4A2663D21823AD70013E601 /* GenericDataSource.swift */,
 				D4A26653218290B60013E601 /* GenreSwitch.swift */,
+				D44D63BC2187515700F5626E /* AnimationExtension.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				D4A26646218254750013E601 /* RequestUpcoming.swift */,
 				D4A26648218257240013E601 /* GenericNetwork.swift */,
 				D4A2664B218259C90013E601 /* NetworkError.swift */,
+				D44D63BA21874F2B00F5626E /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44D63BD2187515700F5626E /* AnimationExtension.swift in Sources */,
 				D4A266392182387C0013E601 /* BaseViewController.swift in Sources */,
 				D4A266592182ABAC0013E601 /* ModalViewController.swift in Sources */,
 				D4A266622182B3E20013E601 /* MovieModalPresenter.swift in Sources */,
@@ -319,6 +326,7 @@
 				D4A2663E21823AD70013E601 /* GenericDataSource.swift in Sources */,
 				D4A26649218257240013E601 /* GenericNetwork.swift in Sources */,
 				D4A2661D21822D580013E601 /* AppDelegate.swift in Sources */,
+				D44D63BB21874F2B00F5626E /* Reachability.swift in Sources */,
 				D4A2664C218259C90013E601 /* NetworkError.swift in Sources */,
 				D4A266342182306A0013E601 /* CoordinatorProtocol.swift in Sources */,
 				D4A26643218251CC0013E601 /* UpcomingResponse.swift in Sources */,

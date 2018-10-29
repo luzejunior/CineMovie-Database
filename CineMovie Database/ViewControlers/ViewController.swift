@@ -13,14 +13,22 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
     // IBOutlets
     @IBOutlet weak var tableView: UITableView! {
         didSet {
+            tableView.alpha = 0.0
             tableView.delegate = self
             tableView.rowHeight = UITableView.automaticDimension
             registerCells()
         }
     }
+    @IBOutlet weak var internetConnectionLabel: UILabel! {
+        didSet {
+            internetConnectionLabel.alpha = 0.0
+        }
+    }
     
     var coordinator: MainCoordinator?
     var presenter: ViewControllerPresenter?
+    
+    let reachability = Reachability()!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -30,11 +38,11 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupInternetConnection()
         // Start activity indicator:
         activityIndicator.startAnimating()
         // Set presenter instance
         presenter = ViewControllerPresenter(view: self)
-        presenter!.fetchData()
         // Set tableview datasource
         tableView.dataSource = presenter?.dataSource
     }
@@ -45,6 +53,7 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
             self.activityIndicator.stopAnimating()
             self.tableView.reloadData()
             self.loadingMoreContent = false
+            self.tableView.FadeIn(0.7)
         }
     }
     
@@ -53,6 +62,30 @@ class ViewController: BaseViewController, Storyboarded, UISearchResultsUpdating,
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func setupInternetConnection() {
+        reachability.whenReachable = { _ in
+            if self.presenter!.currentMovieList.count == 0 {
+                self.presenter!.fetchData()
+            } else {
+                self.tableView.FadeIn(0.7)
+            }
+            if self.internetConnectionLabel.alpha != 0.0 {
+                self.internetConnectionLabel.FadeOut(0.7)
+            }
+            self.navigationItem.searchController?.searchBar.isUserInteractionEnabled = true
+        }
+        reachability.whenUnreachable = { _ in
+            self.tableView.FadeOut(0.7)
+            self.internetConnectionLabel.FadeIn(0.7)
+            self.navigationItem.searchController?.searchBar.isUserInteractionEnabled = false
+        }
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
     }
     
     // --------------- Search Bar ---------------

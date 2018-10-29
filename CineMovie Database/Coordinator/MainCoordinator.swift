@@ -15,8 +15,8 @@ class MainCoordinator: Coordinatable {
     
     // View controllers handled by this coordinator
     var mainViewController: ViewController?
-    var defaultModal: ModalViewController?
-    var movieModal: MovieModal?
+    weak var defaultModal: ModalViewController?
+    weak var movieModal: MovieModal?
     
     // Init coordinator
     init(_ navigationController: UINavigationController, _ window: UIWindow) {
