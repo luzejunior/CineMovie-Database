@@ -28,4 +28,4 @@ $ pod install
 And that's it!
 
 ## Running
-Open cloned directory and open `CineMovie Database.xcworkspace` file.
+Navigate to cloned directory and open `CineMovie Database.xcworkspace` file.
