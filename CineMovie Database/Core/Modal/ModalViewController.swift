@@ -72,7 +72,6 @@ class ModalViewController: UIViewController, Storyboarded {
             self.containerView.alpha = 0.0
             self.transparentView.alpha = 0.0
         }) { _ in
-            print("completed")
             self.viewController?.dismiss(animated: false, completion: nil)
             self.viewController = nil
             self.dismiss(animated: false, completion: nil)

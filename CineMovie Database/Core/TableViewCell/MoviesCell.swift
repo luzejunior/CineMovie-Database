@@ -34,7 +34,11 @@ class MoviesCell: UITableViewCell, UITableViewContent {
     // Configure cell content
     func configureView() {
         moviePoster.kf.indicatorType = .activity
-        moviePoster.kf.setImage(with: presenter?.moviePosterURL)
+        moviePoster.kf.setImage(with: presenter?.moviePosterURL) { (image, _, _, _) in
+            if image == nil {
+                self.moviePoster.image = UIImage(named: "default_poster")
+            }
+        }
         movieNameLabel.text = presenter?.movieTitle
         movieGenreLabel.text = "Genres: " + (presenter?.movieGenre ?? "")
         movieReleaseDateLabel.text = "Release Date: " + (presenter?.movieReleaseDate ?? "")

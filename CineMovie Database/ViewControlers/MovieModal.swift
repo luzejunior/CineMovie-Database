@@ -60,7 +60,11 @@ class MovieModal: UIViewController, Storyboarded {
         headerImage.kf.indicatorType = .activity
         headerImage.kf.setImage(with: presenter?.movieHeaderURL)
         moviePoster.kf.indicatorType = .activity
-        moviePoster.kf.setImage(with: presenter?.moviePosterURL)
+        moviePoster.kf.setImage(with: presenter?.moviePosterURL) { (image, error, _, _) in
+            if image == nil {
+                self.moviePoster.image = UIImage(named: "default_poster")
+            }
+        }
         movieName.text = presenter?.movieTitle
         movieGenres.text = "Genres: " + (presenter?.movieGenre ?? "")
         movieReleaseDate.text = "Release Date: " + (presenter?.movieReleaseDate ?? "")
