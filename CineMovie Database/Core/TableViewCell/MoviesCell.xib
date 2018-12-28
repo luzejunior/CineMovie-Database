@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="227" id="m6m-8n-yAq" customClass="MoviesCell" customModule="CineMovie_Database" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="227"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m6m-8n-yAq" id="2Vy-Tm-mTx">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="226.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcZ-7B-MlB">
+                        <rect key="frame" x="20" y="29" width="105" height="170"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="MV1-W8-5eB"/>
+                            <constraint firstAttribute="height" constant="170" id="jGq-yF-xUu"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie_Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21o-sC-QV0">
+                        <rect key="frame" x="145" y="73" width="316" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie_Genre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArY-mo-DMO">
+                        <rect key="frame" x="145" y="105" width="316" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie_Release_Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="vMF-J0-vEV">
+                        <rect key="frame" x="145" y="131" width="316" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="21o-sC-QV0" firstAttribute="trailing" secondItem="2Vy-Tm-mTx" secondAttribute="trailingMargin" id="0US-yo-Jif"/>
+                    <constraint firstItem="ArY-mo-DMO" firstAttribute="trailing" secondItem="21o-sC-QV0" secondAttribute="trailing" id="ALm-T6-UFV"/>
+                    <constraint firstItem="ArY-mo-DMO" firstAttribute="leading" secondItem="21o-sC-QV0" secondAttribute="leading" id="F4n-5w-mXD"/>
+                    <constraint firstItem="21o-sC-QV0" firstAttribute="leading" secondItem="mcZ-7B-MlB" secondAttribute="trailing" constant="20" id="KmW-PV-gbk"/>
+                    <constraint firstItem="vMF-J0-vEV" firstAttribute="leading" secondItem="21o-sC-QV0" secondAttribute="leading" id="MHY-gM-gCI"/>
+                    <constraint firstItem="mcZ-7B-MlB" firstAttribute="leading" secondItem="2Vy-Tm-mTx" secondAttribute="leadingMargin" id="MpW-Oe-TAo"/>
+                    <constraint firstItem="vMF-J0-vEV" firstAttribute="trailing" secondItem="21o-sC-QV0" secondAttribute="trailing" id="UjN-Vp-PdN"/>
+                    <constraint firstItem="ArY-mo-DMO" firstAttribute="top" secondItem="21o-sC-QV0" secondAttribute="bottom" constant="8" id="et9-B4-5OH"/>
+                    <constraint firstItem="mcZ-7B-MlB" firstAttribute="top" secondItem="2Vy-Tm-mTx" secondAttribute="topMargin" constant="18" id="gNt-GI-k4R"/>
+                    <constraint firstItem="vMF-J0-vEV" firstAttribute="top" secondItem="ArY-mo-DMO" secondAttribute="bottom" constant="8" id="mn1-6N-mae"/>
+                    <constraint firstItem="ArY-mo-DMO" firstAttribute="centerY" secondItem="mcZ-7B-MlB" secondAttribute="centerY" id="qLl-Uy-cuZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="mcZ-7B-MlB" secondAttribute="bottom" constant="18" id="yZK-XP-7Du"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="movieGenreLabel" destination="ArY-mo-DMO" id="B4s-JA-oLP"/>
+                <outlet property="movieNameLabel" destination="21o-sC-QV0" id="iQO-z2-Uzy"/>
+                <outlet property="moviePoster" destination="mcZ-7B-MlB" id="1k2-i1-13l"/>
+                <outlet property="movieReleaseDateLabel" destination="vMF-J0-vEV" id="IKZ-vH-zUA"/>
+            </connections>
+            <point key="canvasLocation" x="173.59999999999999" y="161.46926536731635"/>
+        </tableViewCell>
+    </objects>
+</document>
